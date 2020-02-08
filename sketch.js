@@ -1,22 +1,41 @@
-const Engine = Matter.Engine;
-const World = Matter.World;
-const Bodies = Matter.Bodies;
 
-var engine,world;
 var rain;
+
 function setup() {
   var canvas = createCanvas(400,400);
-  engine = Engine.create();
-  world = engine.world;
-
-  ball = Bodies.rectangle(200,0,5,10);
-  
-  World.add(world,ball);
-  
 }
 
 function draw() {
   background(0);  
-  Engine.update(engine);
-  rect(ball.position.x,ball.position.y,10,20);
+  if(frameCount%10===0){
+    rain = createSprite(200,0,3,random(10,25));
+    rain.shapeColor = "blue";
+    rain.velocityY = random(3,10);
+  }
+  if(frameCount%10===0){
+    rain2 = createSprite(100,0,3,random(10,25));
+    rain2.shapeColor = "blue";
+    rain2.velocityY = random(3,10);
+  }
+  if(frameCount%10===0){
+    rain3 = createSprite(300,0,3,random(10,25));
+    rain3.shapeColor = "blue";
+    rain3.velocityY = random(3,10);
+  }
+  if(frameCount%10===0){
+    rain4 = createSprite(390,0,3,random(10,25));
+    rain4.shapeColor = "blue";
+    rain4.velocityY = random(3,10);
+  }
+  if(frameCount%10===0){
+    rain5 = createSprite(150,0,3,random(10,25));
+    rain5.shapeColor = "blue";
+    rain5.velocityY = random(3,10);
+  }
+  if(frameCount%10===0){
+    rain6 = createSprite(10,0,3,random(10,25));
+    rain6.shapeColor = "blue";
+    rain6.velocityY = random(3,10);
+  }
+  drawSprites();
 }
